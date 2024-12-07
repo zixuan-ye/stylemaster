@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content=".">
+    <meta name="keywords" content="StyleMaster, controllable video generation, style control">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>StyleMaster</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="./static/css/twentytwenty.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./img/logo.png">
+
+    <script src="./static/js/jquery-3.2.1.min.js"></script>
+    <script src="./static/js/jquery.event.move.js"></script>
+    <script src="./static/js/jquery.twentytwenty.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/fontawesome.all.min.js"></script>
+</head>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LKCDBW8851"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-LKCDBW8851');
+</script>
+
+
+<body>
+
+    <section class="hero teaser ">
+        <div class="hero-body">
+            <div class="container is-max-desktop has-text-centered">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered ">
+                        <img src="./image/logo.png" style="height:90px; margin-bottom: -10px;"></img>
+                        <h2 class="title is-1 publication-title has-text-centered">
+                            Stylize Your Video with Artistic Generation and Translation
+                        </h2>
+                        <h2 class="title publication-title is-4 has-text-grey"> Anonymous Submission </h2>
+
+<!-- 
+                        <a href="stylized_video_generation.zip"
+                            class="external-link button is-normal is-rounded is-dark">
+                            <span>Stylized Video Generation Results</span>
+                        </a> -->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" style="text-align: center; ">
+
+        <div id="cmp-gt-carousel-horizontal" class="carousel results-carousel">
+
+            <video muted autoplay="autoplay" loop="loop" width="90%" preload controls>
+                <source src="./video/teaser_crop.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <br>
+
+
+    <script>
+        $(window).on('load', function () {
+            bulmaCarousel.attach('#results-carousel-horizontal', {
+                slidesToScroll: 1,
+                slidesToShow: 1,
+                loop: true,
+                autoplay: false,
+            });
+
+            bulmaCarousel.attach('#results-carousel-vertical', {
+                slidesToScroll: 1,
+                slidesToShow: 1,
+                loop: true,
+                autoplay: false,
+            });
+
+        });
+    </script>
+
+    <section class="section" style="margin-top: 0; padding-top: 50px;">
+
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-4" style="text-align: center;">Complete Image Style Transfer Result (w/o CherryPick)</h2>
+
+            <div id="cmp-gt-carousel-horizontal" class="carousel results-carousel">
+
+                <div class="hero-body" style="margin-top: 20px; margin-bottom: -30px;">
+                    <img id="overview" width="80%" src="./image/ours.png" />
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-4" style="text-align: center;">Stylized Video Generation <span
+                    style="color: #4FACFA;">with Different Style Images</span></h2>
+
+                <div id="results-carousel-horizontal" class="carousel results-carousel">
+
+                    
+                    
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="50%" preload controls>
+                        <source src="./video/diverse_style_images/different_style_1_crop.mp4" type="video/mp4">
+                    </video>
+
+                    <video muted autoplay="autoplay" loop="loop" width="50%" preload controls>
+                        <source src="./video/diverse_style_images/different_style_2_crop.mp4" type="video/mp4">
+                    </video>
+
+                    <video muted autoplay="autoplay" loop="loop" width="50%" preload controls>
+                        <source src="./video/diverse_style_images/different_style_3_crop.mp4" type="video/mp4">
+                    </video>
+
+
+
+                    
+                </div>
+        </div>
+
+        <br>
+
+        <div class="hero-body">
+            <div class="container" style="text-align: center; ">
+
+                <h2 class="title is-4" style="text-align: center;">Stylized Video Generation <span
+                        style="color: #4FACFA;">with Different Prompts</span> </h2>
+                
+
+                <div id="results-carousel-horizontal" class="carousel results-carousel">
+
+                    <video muted autoplay="autoplay" loop="loop" width="50%" preload controls>
+                        <source src="./video/diverse_prompts/different_prompt_3_crop.mp4" type="video/mp4">
+                    </video>
+
+                    <video muted autoplay="autoplay" loop="loop" width="50%" preload controls>
+                        <source src="./video/diverse_prompts/different_prompt_1_crop.mp4" type="video/mp4">
+                    </video>
+
+                    <video muted autoplay="autoplay" loop="loop" width="50%" preload controls>
+                        <source src="./video/diverse_prompts/different_prompt_2_crop.mp4" type="video/mp4">
+                    </video>
+
+                    
+                </div>
+
+                <!-- <div id="results-carousel-horizontal" class="carousel results-carousel">
+
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="./video/diverse_prompts/t2n7.mp4" type="video/mp4">
+                    </video>
+
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="./video/diverse_prompts/t2n9.mp4" type="video/mp4">
+                    </video>
+
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="./video/diverse_prompts/t3n8.mp4" type="video/mp4">
+                    </video>
+
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="./video/diverse_prompts/t1n6.mp4" type="video/mp4">
+                    </video>
+
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="./video/diverse_prompts/t2n1.mp4" type="video/mp4">
+                    </video>
+
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="./video/diverse_prompts/t2n15.mp4" type="video/mp4">
+                    </video>
+
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="./video/diverse_prompts/t3n1.mp4" type="video/mp4">
+                    </video>
+
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="./video/diverse_prompts/t1n2.mp4" type="video/mp4">
+                    </video>
+
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="./video/diverse_prompts/t3n7.mp4" type="video/mp4">
+                    </video>
+
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="./video/diverse_prompts/t2n17.mp4" type="video/mp4">
+                    </video>
+
+                </div> -->
+
+
+            </div>
+        </div>
+
+
+
+        <br>
+
+        
+
+        
+
+    </section>
+
+
+    <br>
+
+    <section class="hero teaser">
+        <div class="hero-body">
+            <!-- Method. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-three-fifths" style=" margin-top: 30px; margin-bottom: 20px;">
+                        <h2 class="title is-3">Method</h2>
+                        <div class="content has-text-justified">
+
+
+                            <div class="hero-body" style="margin-top: 40px; margin-bottom: -30px;">
+                                <img id="overview" width="100%" src="./image/pipeline.png" />
+                            </div>
+                            We first obtain patch features and image embedding of the style image from CLIP, then we select the patches sharing less similarity with text prompt as texture guidance, and use a global projection module to transform it into global style descriptions. 
+                            The global projection module is trained with a contrastive dataset constructed by model illusion through contrastive learning. The style information is then injected into the model through the decoupled cross-attention. 
+                            The motion adapter and gray tile ControlNet are used to enhance dynamic quality and enable content control respectively.
+                            Finally, the modified latent gets back to the remaining layers in the DiT block.
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="hero-body">
+            <div class="columns is-two-fifths is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            Website template credit to <a
+                                href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, and is licensed under a
+                            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
